@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+<style type="text/css">
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff00ff;
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff66ff;
+}
+/* New CSS for Streaming Page */
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+
+.video-entry {
+    width: calc(60% - 10px);
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.video-entry img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.video-entry .video-info {
+    flex-grow: 1;
+}
+
+.video-entry h3,
+.video-entry p {
+    margin: 0;
+    color: #fff;
+}
+
+.video-entry button {
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-entry button:hover {
+    background-color: #ff66ff;
+}
+
+.video-player {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Streaming page specific styles */
+video {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Download page specific styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff00ff;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #ff66ff;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Streaming Page</h1>
+        <a href="/download.ejs" class="button">Go to Download Page</a>
+    </header>
+
+    <div class="container">
+        <!-- Video Playlist -->
+        <div class="playlist">
+            <!-- Video 1 -->
+            <div class="video-entry">
+                <img src="https://www.udiscovermusic.com/wp-content/uploads/2019/12/The-Weekend-Heartless-Video.jpg" alt="Thumbnail">
+                <div class="video-info">
+                    <h3>Heartless (The Weeknd)</h3>
+                    <p>The Weeknd</p>
+                    <button onclick="playVideo('https://youtu.be/1DpH-icPpl0?si=c8cOw_WjuRf-0dwj')">Play</button>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-entry">
+                <img src="https://www.billboard.com/wp-content/uploads/media/the-weeknd-blinding-lights-vid-2020-billboard-1548.jpg?w=942&h=623&crop=1" alt="Thumbnail">
+                <div class="video-info">
+                    <h3>Blinding Lights (The Weeknd)</h3>
+                    <p>The Weeknd</p>
+                    <button onclick="playVideo('https://youtu.be/4NRXx6U8ABQ?si=qO3ElpL_T3emfQ8B')">Play</button>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-entry">
+                <img src="https://www.udiscovermusic.com/wp-content/uploads/2022/12/Save-Your-Tears-Weeknd.jpg" alt="Thumbnail">
+                <div class="video-info">
+                    <h3>Save Your Tears (The Weeknd)</h3>
+                    <p>The Weeknd</p>
+                    <button onclick="playVideo('https://youtu.be/XXYlFuWEuKI?si=WjPo5L80iePnt4UM')">Play</button>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-entry">
+                <img src="https://www.billboard.com/wp-content/uploads/2020/04/the-weeknd-2020-until-i-bleed-out-vid-billboard-1548-1586283016.jpg?w=942&h=623&crop=1" alt="Thumbnail">
+                <div class="video-info">
+                    <h3>Until I Bleed Out (The Weeknd)</h3>
+                    <p>The Weeknd</p>
+                    <button onclick="playVideo('https://youtu.be/oq9AgxHvGjw?si=_ApQ-u-TOCwvHZMy')">Play</button>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-entry">
+                <img src="https://wallpapers.com/images/high/the-weeknd-after-hours-2000-x-1000-wallpaper-2xmdhfxjo3gv2f9t.webp" alt="Thumbnail">
+                <div class="video-info">
+                    <h3>After Hours (The Weeknd)</h3>
+                    <p>The Weeknd</p>
+                    <button onclick="playVideo('https://youtu.be/i58MNnk6BhY?si=bwMDnG5vbKi7H3bV')">Play</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Player Here -->
+        <div class="video-player">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoSrc) {
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoSrc;
+            videoPlayer.play();
+        }
+    </script>
+</body>
+</html>
