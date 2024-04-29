@@ -4,10 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/V', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('MONGO_URI');
 
 // Define video schema and model
 const videoSchema = new mongoose.Schema({
@@ -48,7 +45,7 @@ app.get('/public/videos/V1.mp4', (req, res) => {
 });
 
 // Start the server
-const port = process.env.PORT || 3000;
+const port = 2183; 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
