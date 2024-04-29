@@ -68,10 +68,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB Atlas
-mongoose.connect('MONGO_URI', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('MONGO_URI');
 
 // Define video schema and model
 const videoSchema = new mongoose.Schema({
