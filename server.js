@@ -20,10 +20,25 @@ const Video = mongoose.model('Video', videoSchema);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Define route to fetch videos
-app.get('/videos', async (req, res) => {
+// app.get('/videos', async (req, res) => {
+//   try {
+//     const videos = await Video.find();
+//     res.json(videos);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send('Internal Server Error');
+//   }
+// });
+
+// Define route to fetch videos
+app.get('/videos/:videoId', async (req, res) => {
   try {
-    const videos = await Video.find();
-    res.json(videos);
+    const videoId = req.params.videoId;
+    const filePath = getFilePathForVideoId(videoId);
+    if (!filePath) {
+      return res.status(404).send('Video not found');
+    }
+    res.sendFile(filePath);
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
