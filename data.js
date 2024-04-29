@@ -64,11 +64,11 @@
 
 // // Call the function to upload videos
 // uploadVideos();
-
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 // Connect to MongoDB Atlas
-mongoose.connect('MONGO_URI');
+mongoose.connect(process.env.MONGO_URI);
 
 // Define video schema and model
 const videoSchema = new mongoose.Schema({

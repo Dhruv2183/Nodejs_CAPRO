@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+require('dotenv').config(); 
 
 // Connect to MongoDB
-mongoose.connect('MONGO_URI');
+mongoose.connect(process.env.MONGO_URI);
 
 // Define video schema and model
 const videoSchema = new mongoose.Schema({
@@ -38,11 +39,32 @@ app.get('/download.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'download.html'));
 });
 
-app.get('/public/videos/V1.mp4', (req, res) => {
-  const filePath = path.join(__dirname, 'public', 'videos', 'V1.mp4');
-  res.set('Content-Type', 'video/mp4');
-  res.sendFile(filePath);
-});
+// app.get('/public/videos/V1.mp4', (req, res) => {
+//   const filePath = path.join(__dirname, 'public', 'videos', 'V1.mp4');
+//   res.set('Content-Type', 'video/mp4');
+//   res.sendFile(filePath);
+// });
+
+function getFilePathForVideoId(videoId) {
+  // Implement your logic to map video IDs to file paths here
+  // Example:
+  if (videoId === 'Heartless (The Weeknd) - The Weeknd') {
+    return path.join(__dirname, 'public', 'videos', 'Heartless (The Weeknd) - The Weeknd.mp4');
+  } else if (videoId === 'Blinding Lights (The Weeknd) - The Weeknd') {
+    return path.join(__dirname, 'public', 'videos', 'Blinding Lights (The Weeknd) - The Weeknd.mp4');
+  }
+  else if (videoId === 'Save Your Tears (The Weeknd) - The Weeknd') {
+    return path.join(__dirname, 'public', 'videos', 'Save Your Tears (The Weeknd) - The Weeknd.mp4');
+  }
+  else if (videoId === 'Until I Bleed Out (The Weeknd) - The Weeknd') {
+    return path.join(__dirname, 'public', 'videos', 'Until I Bleed Out (The Weeknd) - The Weeknd.mp4');
+  }
+  else if (videoId === 'After Hours (The Weeknd) - The Weeknd') {
+    return path.join(__dirname, 'public', 'videos', 'After Hours (The Weeknd) - The Weeknd.mp4');
+  }
+  // Add more mappings as needed
+  return null; // Return null if video ID is not found
+}
 
 // Start the server
 const port = 2183; 
