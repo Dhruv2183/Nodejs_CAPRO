@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <style type="text/css">
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #ff00ff;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #ff66ff;
+        }
+        
+        .button1 {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button1:hover {
+            background-color: #ff66ff;
+        }
+        
+        /* Streaming page specific styles */
+        video {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+        
+        /* Download page specific styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+        
+        ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ff00ff;
+            transition: background-color 0.3s ease;
+        }
+        
+        ul li a:hover {
+            background-color: #ff66ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Download Page</h1>
+        <a href="/" class="button">Go to Streaming Page</a>
+    </header>
+
+    <div class="container">
+        <!-- Your content here -->
+        <h2>List of Videos to Download</h2>
+        <!-- Manually list video entries from the database -->
+        <ul>
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <!-- Thumbnail Image -->
+                    <img src="https://www.udiscovermusic.com/wp-content/uploads/2019/12/The-Weekend-Heartless-Video.jpg" alt="Thumbnail" style="width: 100px; height: auto; margin-right: 10px;">
+
+                    <!-- Video Name and Artist Name -->
+                    <div>
+                        <h3>Heartless (The Weeknd) - The Weeknd</h3>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <a href="/public/videos/V1.mp4" class="button1" download>Download</a>
+            </li>
+            <!-- Repeat the above structure for each video entry -->
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <!-- Thumbnail Image -->
+                    <img src="https://www.billboard.com/wp-content/uploads/media/the-weeknd-blinding-lights-vid-2020-billboard-1548.jpg?w=942&h=623&crop=1" alt="Thumbnail" style="width: 100px; height: auto; margin-right: 10px;">
+
+                    <!-- Video Name and Artist Name -->
+                    <div>
+                        <h3>Blinding Lights (The Weeknd) - The Weeknd</h3>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <a href="/public/videos/V1.mp4" class="button1" download>Download</a>
+            </li>
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <!-- Thumbnail Image -->
+                    <img src="https://www.udiscovermusic.com/wp-content/uploads/2022/12/Save-Your-Tears-Weeknd.jpg" alt="Thumbnail" style="width: 100px; height: auto; margin-right: 10px;">
+
+                    <!-- Video Name and Artist Name -->
+                    <div>
+                        <h3>Save Your Tears (The Weeknd) - The Weeknd</h3>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <a href="/public/videos/V1.mp4" class="button1" download>Download</a>
+            </li>
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <!-- Thumbnail Image -->
+                    <img src="https://www.billboard.com/wp-content/uploads/2020/04/the-weeknd-2020-until-i-bleed-out-vid-billboard-1548-1586283016.jpg?w=942&h=623&crop=1" alt="Thumbnail" style="width: 100px; height: auto; margin-right: 10px;">
+
+                    <!-- Video Name and Artist Name -->
+                    <div>
+                        <h3>Until I Bleed Out (The Weeknd) - The Weeknd</h3>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <a href="/public/videos/V1.mp4" class="button1" download>Download</a>
+            </li>
+            <li>
+                <div style="display: flex; align-items: center;">
+                    <!-- Thumbnail Image -->
+                    <img src="https://wallpapers.com/images/high/the-weeknd-after-hours-2000-x-1000-wallpaper-2xmdhfxjo3gv2f9t.webp" alt="Thumbnail" style="width: 100px; height: auto; margin-right: 10px;">
+
+                    <!-- Video Name and Artist Name -->
+                    <div>
+                        <h3>After Hours (The Weeknd) - The Weeknd</h3>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <a href="/public/videos/V1.mp4" class="button1" download>Download</a>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- Your JavaScript code here -->
+</body>
+</html>
